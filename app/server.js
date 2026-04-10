@@ -20,7 +20,7 @@ const PORT = process.env.PORT || 3000;
 
 // Root endpoint — the friendly welcome message
 app.get('/', (req, res) => {
-  res.send('Hello from Cloud Native 🚀');
+  res.send('Hello from Cloud Native ⭐🚀⭐');
 });
 
 // Health endpoint — used by Kubernetes liveness / readiness probes
