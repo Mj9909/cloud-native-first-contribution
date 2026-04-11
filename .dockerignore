@@ -3,6 +3,7 @@
 
 # Node dependencies (will be installed fresh inside the container)
 node_modules
+client/node_modules
 
 # Git history and metadata
 .git

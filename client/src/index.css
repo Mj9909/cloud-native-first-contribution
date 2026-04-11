@@ -1,0 +1,28 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+  --color-cncf-navy: #071a2e;
+  --color-cncf-navy-mid: #0c2744;
+  --color-cncf-blue: #3d6db0;
+  --color-cncf-teal: #6eb8c9;
+  --color-lucknow-gold: #d4a84b;
+  --color-lucknow-gold-dim: #a67c29;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100svh;
+  font-family: var(--font-sans);
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+#root {
+  min-height: 100svh;
+}

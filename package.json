@@ -4,8 +4,10 @@
   "description": "A beginner-friendly project to demonstrate making a first open-source contribution in a cloud-native environment.",
   "main": "app/server.js",
   "scripts": {
+    "build": "npm run build --prefix client",
     "start": "node app/server.js",
-    "dev": "node --watch app/server.js"
+    "dev": "node --watch app/server.js",
+    "dev:client": "npm run dev --prefix client"
   },
   "keywords": [
     "cloud-native",

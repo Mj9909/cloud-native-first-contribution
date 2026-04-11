@@ -40,7 +40,7 @@ Your Code (Node.js / Express)
 
 | Layer | Tool | Purpose |
 |---|---|---|
-| Application | Node.js + Express | HTTP server with `/` and `/health` routes |
+| Application | Node.js + Express + React (Vite) | Web UI at `/`, JSON health at `/health` |
 | Container | Docker (node:18-alpine) | Portable, reproducible runtime environment |
 | Orchestration | Kubernetes | Manages deployment, scaling, and networking |
 
@@ -52,7 +52,11 @@ Your Code (Node.js / Express)
 cloud-native-first-contribution/
 │
 ├── app/
-│   └── server.js          # Express HTTP server (main application)
+│   └── server.js          # Express HTTP server (serves SPA + /health)
+│
+├── client/                # Vite + React landing UI (Radix UI, Framer Motion)
+│   ├── src/
+│   └── package.json
 │
 ├── k8s/
 │   ├── deployment.yaml    # Kubernetes Deployment manifest
@@ -72,7 +76,7 @@ cloud-native-first-contribution/
 
 | Method | Endpoint | Response |
 |---|---|---|
-| `GET` | `/` | `Hello from Cloud Native 🚀` |
+| `GET` | `/` | CNCF Lucknow chapter landing page (static SPA) |
 | `GET` | `/health` | `{ "status": "ok" }` |
 
 ---
@@ -96,12 +100,22 @@ Make sure you have the following installed:
 git clone https://github.com/YOUR_USERNAME/cloud-native-first-contribution.git
 cd cloud-native-first-contribution
 
-# Install dependencies
+# Install dependencies (root server + client UI)
 npm install
+npm install --prefix client
 
-# Start the server
+# Build the frontend, then start the server
+npm run build
 npm start
 ```
+
+For UI development with hot reload, run the Vite dev server in another terminal:
+
+```bash
+npm run dev:client
+```
+
+Then open the URL Vite prints (usually [http://localhost:5173](http://localhost:5173)). The production-style stack uses Express after `npm run build` + `npm start` on port 3000.
 
 Open your browser at [http://localhost:3000](http://localhost:3000)
 
