@@ -21,6 +21,10 @@ const clientDist = path.join(__dirname, '../client/dist');
 // ------------------------------------------------------------
 // Routes
 // ------------------------------------------------------------
+// Root endpoint — the friendly welcome message
+app.get('/', (req, res) => {
+  res.send('Hello from Cloud Native Lucknow, UP 🚀');
+});
 
 // Health endpoint — used by Kubernetes liveness / readiness probes
 // Returns a simple JSON object so orchestrators know the app is alive
