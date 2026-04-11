@@ -1,8 +1,7 @@
 {
-  "name": "cloud-native-first-contribution",
+  "name": "cloud-native-dashboard",
   "version": "1.0.0",
-  "description": "A beginner-friendly project to demonstrate making a first open-source contribution in a cloud-native environment.",
-  "main": "app/server.js",
+  "description": "A simple cloud-native application with Express backend and static frontend UI",
   "scripts": {
     "start": "node app/server.js",
     "dev": "node --watch app/server.js"
@@ -11,13 +10,14 @@
     "cloud-native",
     "kubernetes",
     "docker",
+    "react",
     "express",
-    "open-source",
-    "first-contribution"
+    "dashboard"
   ],
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.18.2"
-  }
+    "express": "^4.21.2"
+  },
+  "devDependencies": {}
 }

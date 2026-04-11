@@ -4,11 +4,15 @@
 // cloud-native concepts (Docker + Kubernetes).
 // ============================================================
 
-// Import the Express framework
+// Import core modules and Express
+const path = require('path');
 const express = require('express');
 
 // Create an Express application instance
 const app = express();
+
+// Serve static frontend assets from app/public
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Define the port the server will listen on.
 // process.env.PORT lets Kubernetes / Docker override it if needed.
@@ -18,9 +22,9 @@ const PORT = process.env.PORT || 3000;
 // Routes
 // ------------------------------------------------------------
 
-// Root endpoint — the friendly welcome message
+// Root endpoint — serves the simple frontend UI
 app.get('/', (req, res) => {
-  res.send('Hello from Cloud Native ⭐🚀⭐');
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 // Health endpoint — used by Kubernetes liveness / readiness probes
