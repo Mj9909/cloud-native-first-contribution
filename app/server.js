@@ -29,6 +29,10 @@ app.get('/health', (req, res) => {
   res.status(200).json({ status: 'ok' });
 });
 
+app.get('/gdgbbditm' , (req,res) => { 
+    res.status(500).json({status:"This is GDG ITM team"})
+});
+
 // ------------------------------------------------------------
 // Start the server
 // ------------------------------------------------------------
